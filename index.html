@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokito Pizza - Villa del Rosario</title>
+    <style>
+        :root {
+            --naranja: #FF7F00;
+            --rojo: #CC0000;
+            --negro: #121212;
+            --blanco: #F5F5F5;
+        }
+        body {
+            background-color: var(--negro);
+            color: var(--blanco);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Estilos del Encabezado */
+        .encabezado {
+            background-color: var(--negro);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--rojo);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--naranja);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--rojo);
+        }
+
+        /* Estilos de la Sección Principal */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid var(--naranja);
+        }
+
+        .hero h1 {
+            color: var(--naranja);
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--naranja);
+            color: var(--negro);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--blanco);
+            color: var(--rojo);
+        }
+        /* Estilos de la Sección del Menú */
+        .menu-seccion {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .menu-seccion h2 {
+            color: var(--naranja);
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .contenedor-tarjetas {
+            display: grid;
+            /* Esto hace que las tarjetas se acomoden solas en celular o PC (Responsive) */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tarjeta {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+            border-color: var(--rojo);
+        }
+
+        .img-placeholder {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta h3 {
+            color: var(--blanco);
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .precio {
+            color: var(--rojo);
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .btn-pedir {
+            background-color: var(--rojo);
+            color: var(--blanco);
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .btn-pedir:hover {
+            background-color: var(--naranja);
+            color: var(--negro);
+        }
+        /* --- Estilos del Pie de Página (Contacto) --- */
+        .pie-pagina {
+            background-color: #0a0a0a;
+            padding: 40px 20px 20px;
+            text-align: center;
+            border-top: 3px solid var(--rojo);
+            margin-top: 50px;
+        }
+
+        .contacto-info h2 {
+            color: var(--naranja);
+            margin-bottom: 15px;
+        }
+
+        .contacto-info p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: var(--blanco);
+        }
+
+        .derechos {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* --- Punto 5 del Checklist: Diseño Responsive (Celulares) --- */
+        @media (max-width: 768px) {
+            .encabezado {
+                flex-direction: column; /* Pone el menú debajo del logo en móviles */
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap; /* Evita que el menú se salga de la pantalla */
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 28px; /* Achica el texto principal para que quepa */
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="logo">🍕 Kokito Pizza</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <section id="inicio" class="hero">
+        <div class="hero-contenido">
+            <h1>¡La mejor pizza de Villa del Rosario!</h1>
+            <p>Pizzas, Lasañas, Salchipapas y Hamburguesas con el mejor sabor.</p>
+            <a href="https://wa.me/573016881166" class="btn-whatsapp">Pedir por WhatsApp</a>
+        </div>
+    </section>
+    <!-- Sección del Menú -->
+    <section id="menu" class="menu-seccion">
+        <h2>Nuestro Menú</h2>
+        <div class="contenedor-tarjetas">
+            
+            <!-- Tarjeta Pizza -->
+            <div class="tarjeta">
+                <div class="img-placeholder">🍕</div>
+                <h3>Pizzas</h3>
+                <p class="precio">Desde $17.000</p>
+                <a href="https://wa.me/573016881166" class="btn-pedir">Pedir</a>
+            </div>
+
+            <!-- Tarjeta Lasaña -->
+            <div class="tarjeta">
+                <div class="img-placeholder">🍝</div>
+                <h3>Lasañas</h3>
+                <p class="precio">$23.000</p>
+                <a href="https://wa.me/573016881166" class="btn-pedir">Pedir</a>
+            </div>
+
+            <!-- Tarjeta Salchipapa -->
+            <div class="tarjeta">
+                <div class="img-placeholder">🍟</div>
+                <h3>Salchipapas</h3>
+                <p class="precio">Desde $16.000</p>
+                <a href="https://wa.me/573016881166" class="btn-pedir">Pedir</a>
+            </div>
+
+            <!-- Tarjeta Hamburguesa -->
+            <div class="tarjeta">
+                <div class="img-placeholder">🍔</div>
+                <h3>Hamburguesas</h3>
+                <p class="precio">Desde $13.000</p>
+                <a href="https://wa.me/573016881166" class="btn-pedir">Pedir</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- Sección de Contacto / Footer -->
+    <footer id="contacto" class="pie-pagina">
+        <div class="contacto-info">
+            <h2>¿Antojo de pizza? ¡Escríbenos!</h2>
+            <p>📍 Villa del Rosario</p>
+            <p>📞 WhatsApp: 3016881166</p>
+        </div>
+        <p class="derechos">© 2026 Kokito Pizza. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
